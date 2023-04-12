@@ -44,3 +44,13 @@
     - This is likely due to the fact that the VIX is not a good indicator of future volatility
     - This also rounds out that complex strategies are not needed to make money in the market
 - This means our strategy will have the option to trade using VIX optimization such it pose an advantage in the future, but that we will not be using it for the time being.
+
+### Running in an Azure Client:
+- The Azure VM I used was a Standard B2s (2 vcpus, 4 GiB memory)
+- The VM is running Windows 10 Pro
+<br>
+<img alt="VM CLient 1" src="research/pics/vm_client_1.png"/>
+<br>
+<img alt="VM CLient 1" src="research/pics/vm_client_2.png"/>
+<br>
+<img alt="VM CLient 1" src="research/pics/vm_client_3.png"/>
