@@ -22,7 +22,7 @@
 - Tried to connect Zorro to IB... need Zorro S, gonna have to make my own in Python
 - Realized Zorro data wasn't clean to begin with... dodged a bullet there
 - Initiated transfer of $550 to IB Account to get historical data
-## 3/30/23 to 4/1/23
+## 3/30/23 to 4/11/23
 - Backtested my strategy using OptionOmega, a paid for service, thank you COE Department
 - Attached the backtest results to the report in the README.md
 - Worked on making the algorithm work using ib_insync
