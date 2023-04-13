@@ -1,14 +1,16 @@
 # Delta Neutral Trading Strategy: The Strangle
 
 ## Introduction
-#### NOTE: This project is for informational purposes only. This project and all information contained herein is not investment advice, and not intended to be investment advice. Any trades you make based on this information are your responsibility alone. The project maker disclaims any liability, loss, or risk resulting directly or indirectly, from the use or application of any of the contents of this project.
+I have been interested in stock trading and finance since I came to college. This interest has led to my passion to study the idea of value in the markets. I would like to automate an existing strategy that I currently do manually that has generated consistent profit for me almost 80% of the time. Below is an explanation of the strategy and the results of my backtesting.
+
+**NOTE: This project is for informational purposes only. This project and all information contained herein is not investment advice, and not intended to be investment advice. Any trades you make based on this information are your responsibility alone. The project maker disclaims any liability, loss, or risk resulting directly or indirectly, from the use or application of any of the contents of this project.**
+
 <img alt="ShortStrangle.png" src="research/pics/ShortStrangle.png" title="Short Strangle Payoff" width="775" height="471"/>
 
 ### Basic Strategy Rules:
  - Sell a call and a put at 16 delta or 1σ strike in the 45 DTE monthly expiration (or as close as possible)
  - Close at 21 DTE win or lose
  - Set profit target at 50% and stop loss at 200% of net credit received
- - Do nothing until 21 DTE
 
 ### Optional Management Tips (that will not be implemented but are good to know):
 - Sell when IVR and IVx are > 30%
@@ -54,3 +56,15 @@
 <img alt="VM CLient 1" src="research/pics/vm_client_2.png"/>
 <br>
 <img alt="VM CLient 1" src="research/pics/vm_client_3.png"/>
+
+### Extending this Project:
+- Implementing this strategy with futures options instead of equity options
+- Make this client more modular so that it can be used for other strategies (simultaneously)
+- Implement this strategy such that it capitalizes on the IV _difference_ between the Barone-Adesi And Whaley and Black-Scholes models
+  - Calculate the IV of the strangle using the Barone-Adesi And Whaley model and the IV of the strangle using the Black-Scholes model
+  - If the IV of the strangle using the Barone-Adesi And Whaley model is **greater** than the IV of the strangle using the Black-Scholes model, then **buy** the strangle
+  - If the IV of the strangle using the Barone-Adesi And Whaley model is **less** than the IV of the strangle using the Black-Scholes model, then **sell** the strangle
+  - Research more [here](https://medium.datadriveninvestor.com/i-needed-money-so-i-invented-baw-iv-trading-921bea493994)
+- Implement this strategy using rolling percent change confidence intervals
+- Implement this strategy using a neural network or a deep learning model
+- Make a custom interface for it so that the CPU usage isn't tied up in running TWS or Gateway
