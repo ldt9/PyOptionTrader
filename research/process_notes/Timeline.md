@@ -29,7 +29,7 @@
 - Connected to IB and pulled historical data and account data
 - Created helper functions to narrow the search area for the options algorithm
 - Created a function to get the current price of the underlying and the strangle
-- Created all necesary functions to create an order, place it, and manage the trade using the described strategy
+- Created all necessary functions to create an order, place it, and manage the trade using the described strategy
 - Tested the algorithm for a few days on my computer, it works great
 - Used auto-py-to-exe to convert the python file to an exe file using PyInstaller
 - Ran the exe file on my computer and it works great

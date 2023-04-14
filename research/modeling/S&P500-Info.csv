@@ -1,0 +1,31 @@
+,Company,Exchange,Symbol,Industry,Date added,Notes,Index weighting
+0,3M,NYSE,MMM,Conglomerate,1976-08-09,As Minnesota Mining and Manufacturing,2.41%
+1,American Express,NYSE,AXP,Financial services,1982-08-30,,3.02%
+2,Amgen,NASDAQ,AMGN,Biopharmaceutical,2020-08-31,,5.48%
+3,Apple,NASDAQ,AAPL,Information technology,2015-03-19,,2.84%
+4,Boeing,NYSE,BA,Aerospace and defense,1987-03-12,,3.36%
+5,Caterpillar,NYSE,CAT,Construction and Mining,1991-05-06,,4.52%
+6,Chevron,NYSE,CVX,Petroleum industry,2008-02-19,Also 1930-07-18 to 1999-11-01,3.50%
+7,Cisco,NASDAQ,CSCO,Information technology,2009-06-08,,0.96%
+8,Coca-Cola,NYSE,KO,Drink industry,1987-03-12,Also 1932-05-26 to 1935-11-20,1.22%
+9,Disney,NYSE,DIS,Broadcasting and entertainment,1991-05-06,,1.89%
+10,Dow,NYSE,DOW,Chemical industry,1991-05-06,,0.98%
+11,Goldman Sachs,NYSE,GS,Financial services,2019-04-02,,7.36%
+12,Home Depot,NYSE,HD,Home Improvement,1999-11-01,,6.27%
+13,Honeywell,NASDAQ,HON,Conglomerate,2020-08-31,AlliedSignal and Honeywell,4.17%
+14,IBM,NYSE,IBM,Information technology,1979-06-29,Also 1932-05-26 to 1939-03-04,2.86%
+15,Intel,NASDAQ,INTC,Semiconductor industry,1999-11-01,,0.57%
+16,Johnson & Johnson,NYSE,JNJ,Pharmaceutical industry,1997-03-17,,3.43%
+17,JPMorgan Chase,NYSE,JPM,Financial services,1991-05-06,,2.61%
+18,McDonald's,NYSE,MCD,Food industry,1985-10-30,,5.24%
+19,Merck,NYSE,MRK,Pharmaceutical industry,1979-06-29,,2.10%
+20,Microsoft,NASDAQ,MSFT,Information technology,1999-11-01,,4.88%
+21,Nike,NYSE,NKE,Clothing industry,2013-09-20,,2.13%
+22,Procter & Gamble,NYSE,PG,Fast-moving consumer goods,1932-05-26,,2.86%
+23,Salesforce,NYSE,CRM,Information technology,2020-08-31,,2.82%
+24,Travelers,NYSE,TRV,Insurance,2009-06-08,,3.62%
+25,UnitedHealth Group,NYSE,UNH,Managed health care,2012-09-24,,10.29%
+26,Verizon,NYSE,VZ,Telecommunications industry,2004-04-08,,0.73%
+27,Visa,NYSE,V,Financial services,2013-09-20,,4.16%
+28,Walgreens Boots Alliance,NASDAQ,WBA,Retailing,2018-06-26,,0.79%
+29,Walmart,NYSE,WMT,Retailing,1997-03-17,,2.94%
