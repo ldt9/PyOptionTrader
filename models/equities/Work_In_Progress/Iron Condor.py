@@ -11,6 +11,9 @@ from apscheduler.schedulers.background import BackgroundScheduler
 import asyncio
 import nest_asyncio
 
+# TODO:
+# * Add a way to reconnect to IB if connection is lost
+
 class IronCondors():
     '''
     This class is designed to create an iron condor strategy.
