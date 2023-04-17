@@ -40,12 +40,15 @@ Once I had this framework built and packaged as a class, I converted the Python 
 If you want more details about the intricacies of the program, you can check out the [design document.](https://github.com/ldt9/pyoptiontrador/blob/master/research/implementation/function_explanations.md)
 
 ### Design Testing/Validation:
+I also tested the efficacy of the strike selection algorithms through the use of notebooks and multiple python files. When a strike was calculated and produced, I would confirm with the brokerage to prove the correct strike had been chosen by looking at the same option chain and its corresponding greeks. 
+I also tested making standalone option orders and option orders to prove efficacy of the different ordering types such as market, limit and bracket orders. These files can be found in this [folder](https://github.com/ldt9/pyoptiontrador/tree/master/research/implementation).
+
 Since April 12th, 2023 I have been running the program on an Azure VM 24/7. I have not had any issues with the program crashing or the VM shutting down. I have also not had any issues with the program not being able to connect to the broker.
 I have stress tested the program by shutting down the IB Trader Workstation, the gateway used to connect the program to IB, and making sure it reconnects properly and picks up the local variables appropriately.
 It executes trades flawlessly, and has even managed to make a small (paper) profit in the account. I have also tested the program by running it on my local machine and connecting to the IB Trader Workstation on my laptop. It works just as well as it does on the VM.
 You can see the results of its trades below in the VM screenshots and in the videos in this [folder](https://github.com/ldt9/pyoptiontrador/tree/master/research/implementation).
 
-## Strategy
+## Strategy Explanation
 ### High Level Overview:
 The delta neutral short strangle trading strategy is an options trading strategy that involves simultaneously selling an out-of-the-money (OTM) call option and an OTM put option on the same underlying security, while maintaining a delta-neutral position. This means that the overall delta, which measures the sensitivity of the options position to changes in the price of the underlying security, is kept close to zero.
 
@@ -126,3 +129,4 @@ The delta-neutral short strangle strategy is typically used in neutral or range-
 - Implement this strategy using rolling percent change confidence intervals
 - Implement this strategy using a neural network or a deep learning model to decide when to enter the strangles
 - Make a custom interface for it so that the CPU usage isn't tied up in running TWS or Gateway
+  - Possible options for doing this include: PyGame, Tkinter, or PyQT.
