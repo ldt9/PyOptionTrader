@@ -106,6 +106,38 @@ The delta-neutral short strangle strategy is typically used in neutral or range-
 <br>
 <img alt="VM CLient 1" src="research/pics/vm_client_3.png"/>
 
+### Installation (Windows Only):
+Step 1: Download the executable from the [models](https://github.com/ldt9/pyoptiontrador/tree/master/models) folder
+  - As of 4/12/23, there is only one executable available for the equity short strangle strategy [here](https://github.com/ldt9/pyoptiontrador/tree/master/models/equities) 
+
+Step 2: Open your Interactive Brokers Trader Workstation (TWS) and log in
+
+Step 3: Make sure your port is set to `7497`, and your client ID is set to `101` on whichever account you want to trade on
+
+Step 4: Run the executable
+
+Step 5: If you want to make adjustments to the strategy, you can edit the python file and run it locally with the same port and ID settings
+  - If you find a strategy setting you like, you can use `Auto-Py-To-Exe` to package the python file following the instructions below
+
+### Packaging with Auto-Py-To-Exe After Making Changes:
+Step 1: Install Auto-Py-To-Exe using the instructions [here](https://towardsdatascience.com/how-to-easily-convert-a-python-script-to-an-executable-file-exe-4966e253c7e9)
+
+Step 2: Open a terminal and run `Auto-To-Py-Exe`
+
+Step 3: Select the new python file you want to package following the general instructions previously linked
+
+Step 4: **IMPORTANT STEP!** Before you package the client, make sure to add the following packages to the `hidden-libraries` under the `Advanced` drop down.
+If you do not do this, the client will open for a few seconds and then immediatley close.
+If you add a new library to your python file, you will need to add it to the `hidden-libraries` as well.
+- `ib_insync`
+- `pandas`
+- `aysncio`
+- `py_vollib_vectorized`
+- `apscheduler`
+
+It should look something like this under the Advanced drop down:
+<img alt="auto-py-to-exe" src="research/pics/auto-py-to-exe_hidden_imports.png"/>
+
 ### Packages Used:
 - [ib_insync](https://ib-insync.readthedocs.io/api.html)
 - [pandas](https://pandas.pydata.org/docs/)
