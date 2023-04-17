@@ -11,11 +11,6 @@ from apscheduler.schedulers.background import BackgroundScheduler
 import asyncio
 import nest_asyncio
 
-# TODO:
-# * Make Seperate Classes for each strategy
-# * Create Trade Managers for each strategy
-    # * For IC orders make sure to close them if they're open at the end of the day
-
 class IronCondors():
     '''
     This class is designed to create an iron condor strategy.
