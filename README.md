@@ -1,11 +1,10 @@
-# Delta Neutral Trading Strategy: The Strangle
+# PyOptionTrador: Option Trading Strategies executed on Interactive Brokers
 
 ## Introduction
 I have been interested in stock trading and finance since I came to college. This interest has led to my passion to study the idea of value in the markets. I would like to automate an existing strategy that I currently do manually that has generated consistent profit for me almost 80% of the time. Below is an explanation of the strategy and the results of my backtesting.
 
-**NOTE: This project is for informational purposes only. This project and all information contained herein is not investment advice, and not intended to be investment advice. Any trades you make based on this information are your responsibility alone. The project maker disclaims any liability, loss, or risk resulting directly or indirectly, from the use or application of any of the contents of this project.**
-
-<img alt="ShortStrangle.png" src="research/pics/ShortStrangle.png" title="Short Strangle Payoff" width="775" height="471"/>
+**NOTE: This project is for informational purposes only. This project and all information contained herein is not investment advice, and not intended to be investment advice. Any trades you make based on this information are your responsibility alone. The project maker disclaims any liability, loss, or risk resulting directly or indirectly, from the use or application of any of the contents of this project.
+I am not affiliated with Interactive Brokers in any way. This repo is open source, free to use, free to contribute, so use it at own risk. There is no promise of future profits nor responsibility of future loses.**
 
 ### Design Overview and Consideration Process:
 I had originally wanted to choose a broker/backtest package combo. By this, I mean a platform that allows you to backtest your strategy while also being able to actively trade it.
@@ -48,7 +47,10 @@ I have stress tested the program by shutting down the IB Trader Workstation, the
 It executes trades flawlessly, and has even managed to make a small (paper) profit in the account. I have also tested the program by running it on my local machine and connecting to the IB Trader Workstation on my laptop. It works just as well as it does on the VM.
 You can see the results of its trades below in the VM screenshots and in the videos in this [folder](https://github.com/ldt9/pyoptiontrador/tree/master/research/implementation).
 
-## Strategy Explanation
+## Short Strangle Strategy Explanation
+
+<img alt="ShortStrangle.png" src="research/pics/ShortStrangle.png" title="Short Strangle Payoff" width="775" height="471"/>
+
 ### High Level Overview:
 The delta neutral short strangle trading strategy is an options trading strategy that involves simultaneously selling an out-of-the-money (OTM) call option and an OTM put option on the same underlying security, while maintaining a delta-neutral position. This means that the overall delta, which measures the sensitivity of the options position to changes in the price of the underlying security, is kept close to zero.
 
@@ -162,3 +164,7 @@ It should look something like this under the Advanced drop down:
 - Implement this strategy using a neural network or a deep learning model to decide when to enter the strangles
 - Make a custom interface for it so that the CPU usage isn't tied up in running TWS or Gateway
   - Possible options for doing this include: PyGame, Tkinter, or PyQT.
+
+### More to Come:
+- Iron Condor Strategies
+- Short Straddle Strategies
