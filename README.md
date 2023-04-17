@@ -108,7 +108,7 @@ The delta-neutral short strangle strategy is typically used in neutral or range-
 
 ### Installation (Windows Only):
 **Step 1:** Download the executable from the [models](https://github.com/ldt9/pyoptiontrador/tree/master/models) folder
-  - As of 4/12/23, there is only one executable available for the equity short strangle strategy [here](https://github.com/ldt9/pyoptiontrador/tree/master/models/equities) 
+  - As of 4/12/23, there is only one executable available for the equity short strangle strategy [here](https://github.com/ldt9/pyoptiontrador/tree/master/models/equities/Release) 
 
 **Step 2:** Open your Interactive Brokers Trader Workstation (TWS) and log in
 
