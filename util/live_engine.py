@@ -7,7 +7,7 @@ import importlib
 from datetime import datetime
 import yaml
 from PyQt5 import QtCore, QtWidgets, QtGui
-from quanttrader.gui.ui_main_window import MainWindow
+from util.quanttrader.gui.ui_main_window import MainWindow
 import atexit
 from signal import signal, SIGINT, SIG_DFL
 from os import kill

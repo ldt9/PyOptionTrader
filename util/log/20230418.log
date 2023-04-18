@@ -10,3 +10,8 @@ of version 954.1 or newer:  TWS: 7497; IB Gateway: 4002
 2023-04-18 12:48:10,684 - quanttrader.gui.ui_main_window - INFO - control: start_strategy 1
 2023-04-18 12:48:16,532 - quanttrader.gui.ui_main_window - INFO - control: liquidate all strategy
 2023-04-18 12:48:19,352 - quanttrader.gui.ui_main_window - INFO - closing main window
+2023-04-18 13:34:04,365 - qtlive - ERROR - Unable to load strategy active_buy_sell_strength_strategy: No module named 'talib'
+2023-04-18 13:34:04,368 - qtlive - ERROR - Unable to load strategy double_moving_average_cross_strategy: No module named 'talib'
+2023-04-18 13:34:04,371 - qtlive - ERROR - Unable to load strategy dual_thrust_strategy: No module named 'talib'
+2023-04-18 13:34:04,374 - qtlive - INFO - DualTimeFrameStrategy initiated
+2023-04-18 13:34:04,377 - qtlive - INFO - OrderPerIntervalStrategy initiated
