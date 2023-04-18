@@ -5,10 +5,51 @@ I have been interested in stock trading and finance since I came to college. Thi
 **NOTE: This project is for informational purposes only. This project and all information contained herein is not investment advice, and not intended to be investment advice. Any trades you make based on this information are your responsibility alone. The project maker disclaims any liability, loss, or risk resulting directly or indirectly, from the use or application of any of the contents of this project.
 I am not affiliated with Interactive Brokers in any way. This repo is open source, free to use, free to contribute, so use it at own risk. There is no promise of future profits nor responsibility of future loses.**
 
+### Design Overview and Consideration Process:
+I had originally wanted to choose a broker/backtest package combo. By this, I mean a platform that allows you to backtest your strategy while also being able to actively trade it.
+First, I started with QuantConnect, a popular platform that is used for testing different strategies using Python. After testing on this for a few days, I realized the platform is incredibly slow.
+From there, I moved to Zorro, a platform that is used for testing strategies using C++. I was able to get a much faster backtest, but I was not able to find a broker that would allow me to trade the strategy I wanted without paying for the upgraded version of Zorro, Zorro S. I also found that the platform was not very user friendly, the (free) data I was provided was not clean, and the API was not well-documented.
+
+After trying two broker/backtest combos, I decided it was time to try to make something on my own instead. I was funded a 1-month subscription to OptionOmega thanks to the ECE Department at Pitt, and backtested my strategy on there. My strategy seemed to outperform the market, which is all I need to start the development process.
+For my broker, I decided to use Interactive Brokers (IB). I have used IB in the past, and I have found it to be a very reliable broker. I also found that IB has a very well-documented API, which will make the development process much easier.
+I used a package called ib_insync to connect to the IB API made by Ewald de Wit. It made the IB API easier to use and quickened the development time substantially.
+
+After I had a working model on my computer, I decided it was time to package the model into an executable so it could be run on an Azure VM.
+To do this I used Auto-Py-To-Exe, a GUI version of PyInstaller. I was able to package the model into an executable in a matter of minutes, and since then I have been running it on the VM 24/7.
+This project taught me that nothing really ever goes as easily as you expect it to, but so long as you have determination to reach a final product, you will make something that is just as good as what you had originally imagined.
+
+### Design Verification:
+To make sure my strategy was profitable, I put my rules set into OptionOmega and ran it over the past 3 years. It came back with profitable returns, proving the efficacy of my model. 
+You can check out those returns below. Next, I started by making a basic program that connected to IB and returned account information.
+I built off that and changed the design to sell a call and a put option simultaneously. Once I had my feet wet, I started looking for more inspiration into how I could
+make something that was able to run 24/7 and survive IB's dreaded forced application restarts. This is where the implementation came in.
+
+### Design Implementation:
+I started by reorganizing the framework created in this [repo](https://github.com/Jake0303/RiskyOptionsBot) by Jake Amaral. This program waits for 3 consecutive 5-minute higher closes and sets the take profit at the next bar. While this strategy is
+nowhere near similar to mine, the framework for order entry and management is spot on. I took this, and added my own twist to it by creating, what's named by IB, a BAG of options. This basically bundles the orders together into one contract so they all execute together.
+Then the program will check to see if a trade or order is open, and if there isn't any open trades or orders it will decide the strikes to sell a call and put at, bundle them into a BAG, and ship them off to be executed.
+
+The trade is sent as a bracket to the broker meaning the stop and take-profit are built into the strategy order. This makes it super convenient for me because the trade will automatically be managed by the broker. All the program needs to do is wait for there to be no open trade to make another order.
+There is only one thing that I didn't consider until the end, but that is how to survive IB's forced application restarts. I had to add a try/except block to the main loop that would catch the disconnect event, wait 60 seconds, and then attempt to reconnect the program to IB. 
+This took the longest to figure out since it isn't crystal clear from IB on how to do this, and IB_Insync doesn't have a built-in function to handle this.
+
+Once I had this framework built and packaged as a class, I converted the Python file into an EXE using Auto-Py-To-Exe and loaded it onto the Azure VM where I have been running it ever since.
+
+If you want more details about the intricacies of the program, you can check out the [design document.](https://github.com/ldt9/pyoptiontrador/blob/master/research/implementation/function_explanations.md)
+
+### Design Testing/Validation:
+I also tested the efficacy of the strike selection algorithms through the use of notebooks and multiple python files. When a strike was calculated and produced, I would confirm with the brokerage to prove the correct strike had been chosen by looking at the same option chain and its corresponding greeks. 
+I also tested making standalone option orders and option orders to prove efficacy of the different ordering types such as market, limit and bracket orders. These files can be found in this [folder](https://github.com/ldt9/pyoptiontrador/tree/master/research/implementation).
+
+Since April 12th, 2023 I have been running the program on an Azure VM 24/7. I have not had any issues with the program crashing or the VM shutting down. I have also not had any issues with the program not being able to connect to the broker.
+I have stress tested the program by shutting down the IB Trader Workstation, the gateway used to connect the program to IB, and making sure it reconnects properly and picks up the local variables appropriately.
+It executes trades flawlessly, and has even managed to make a small (paper) profit in the account. I have also tested the program by running it on my local machine and connecting to the IB Trader Workstation on my laptop. It works just as well as it does on the VM.
+You can see the results of its trades below in the VM screenshots and in the videos in this [folder](https://github.com/ldt9/pyoptiontrador/tree/master/research/implementation).
+
 # Implemented Strategies
 
 ## Strategy 1: The Short Strangle
-<img alt="ShortStrangle.png" src="research/pics/ShortStrangle.png" title="Short Strangle Payoff" width="775" height="471"/>
+<img alt="ShortStrangle.png" src="pics/ShortStrangle.png" title="Short Strangle Payoff" width="775" height="471"/>
 
 ### High Level Overview:
 The delta neutral short strangle trading strategy is an options trading strategy that involves simultaneously selling an out-of-the-money (OTM) call option and an OTM put option on the same underlying security, while maintaining a delta-neutral position. This means that the overall delta, which measures the sensitivity of the options position to changes in the price of the underlying security, is kept close to zero.
@@ -30,9 +71,9 @@ The delta-neutral short strangle strategy is typically used in neutral or range-
 - Roll out in time and recenter your strangle
 
 ### Management Flow Charts:
-<img alt="UnrealizedRisk_DecisionTree.png" src="research/pics/UR_DecisionTree.png" width="1138" height="525"/>
+<img alt="UnrealizedRisk_DecisionTree.png" src="pics/UR_DecisionTree.png" width="1138" height="525"/>
 <br>
-<img alt="VIX_DecisionTree.png" src="research/pics/VIX_DecisionTree.png" width="772" height="542"/>
+<img alt="VIX_DecisionTree.png" src="pics/VIX_DecisionTree.png" width="772" height="542"/>
 
 ### Advantages:
 - Delta Neutral Trading using short options can make a profit without taking any directional risk at time of entry, especially if the underlying stays stagnant for some time after.
@@ -45,10 +86,10 @@ The delta-neutral short strangle strategy is typically used in neutral or range-
 - By executing a delta neutral position with short options, one can lose money from an increase in volatility.
 
 ### 3 Year Backtesting Results without VIX Optimization:
-<img alt="3yrBacktest.png" src="research/pics/3yr_performance.png"/>
+<img alt="3yrBacktest.png" src="pics/3yr_performance.png"/>
 
 ### 3 Year Backtesting Results with VIX Optimization:
-<img alt="3yrBacktest.png" src="research/pics/3yr_perfomace_vix_optimized.png"/>
+<img alt="3yrBacktest.png" src="pics/3yr_perfomace_vix_optimized.png"/>
 
 ### Takeaways from Backtesting:
 - The strategy is profitable over the Short/Medium Term
@@ -61,11 +102,11 @@ The delta-neutral short strangle strategy is typically used in neutral or range-
 - The Azure VM I used was a Standard B2s (2 vcpus, 4 GiB memory)
 - The VM is running Windows 10 Pro
 <br>
-<img alt="VM CLient 1" src="research/pics/vm_client_1.png"/>
+<img alt="VM CLient 1" src="pics/vm_client_1.png"/>
 <br>
-<img alt="VM CLient 1" src="research/pics/vm_client_2.png"/>
+<img alt="VM CLient 1" src="pics/vm_client_2.png"/>
 <br>
-<img alt="VM CLient 1" src="research/pics/vm_client_3.png"/>
+<img alt="VM CLient 1" src="pics/vm_client_3.png"/>
 
 ### Installation (Windows Only):
 **Step 1:** Download the executable from the [models](https://github.com/ldt9/pyoptiontrador/tree/master/models) folder
@@ -97,7 +138,7 @@ If you add a new library to your python file, you will need to add it to the `hi
 - `apscheduler`
 
 It should look something like this under the Advanced drop down:
-<img alt="auto-py-to-exe" src="research/pics/auto-py-to-exe_hidden_imports.png"/>
+<img alt="auto-py-to-exe" src="pics/auto-py-to-exe_hidden_imports.png"/>
 
 ### Packages Used:
 - [ib_insync](https://ib-insync.readthedocs.io/api.html)
