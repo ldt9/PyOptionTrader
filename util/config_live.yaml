@@ -1,0 +1,72 @@
+account: DU6339390
+client_id: 101
+host: 127.0.0.1
+port: 7497
+theme: dark
+strategy:
+  #---------- Strategy and params control -----------#
+  # DoubleMovingAverageCrossStrategy:
+  #   active: false
+  #   capital: 10000
+  #   params:
+  #     n_fast_ma: 20
+  #     n_slow_ma: 200
+  #   symbols:
+  #   - NGZ0 FUT NYMEX
+  #---------- Strategy and params control -----------#
+  DualTimeFrameStrategy:
+    active: false
+    capital: 10000
+    params:
+      start_time: '09:30:00'
+      end_time: '16:14:58'
+      bar_start_time: '09:00:00'
+      bar_end_time: '16:15:00'
+      lookback_5sec: 50
+      lookback_15sec: 20
+    symbols:
+    - ESM1 FUT GLOBEX
+  #---------- Strategy and params control -----------#
+  # DualThrustStrategy:
+  #   active: false
+  #   capital: 10000
+  #   params:
+  #     G: 20
+  #   symbols:
+  #   - MESZ0 FUT GLOBEX
+  #---------- Strategy and params control -----------#
+  # MovingAverageCrossStrategy:
+  #   active: false
+  #   capital: 10000
+  #   params:
+  #     G: 20
+  #   symbols:
+  #   - CLZ0 FUT NYMEX
+  #---------- Strategy and params control -----------#
+  # ActiveBuySellStrengthStrategy:
+  #   active: false
+  #   capital: 10000
+  #   params:
+  #     strength_abs_threshold: 200
+  #   symbols:
+  #     - NQZ0 FUT GLOBEX
+  #---------- Strategy, params control, and local risk control -----------#
+  OrderPerIntervalStrategy:
+    active: false
+    capital: 50000
+    order_start_time: '10:00:00'
+    order_end_time: '16:15:00'
+    params:
+      tick_trigger_threshold: 6000
+    single_trade_limit: 3
+    symbols:
+    - ESM1 FUT GLOBEX
+    total_active_limit: 2
+    total_cancel_limit: 5
+    total_loss_limit: 5000
+    total_trade_limit: 15
+#---------- global risk control -----------#
+total_active_limit: 3
+total_cancel_limit: 10
+total_loss_limit: 10000
+total_trade_limit: 20

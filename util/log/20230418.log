@@ -1,0 +1,12 @@
+2023-04-18 12:45:28,035 - qtlive - ERROR - Unable to load strategy order_per_interval_strategy: 'strategy'
+2023-04-18 12:47:41,090 - qtlive - INFO - OrderPerIntervalStrategy initiated
+2023-04-18 12:47:41,113 - quanttrader.strategy.strategy_manager - INFO - add ESM1 FUT GLOBEX
+2023-04-18 12:47:44,548 - quanttrader.brokerage.ib_brokerage - ERROR - Error. id: -1, Code: 502, Msg: Couldn't connect to TWS. Confirm that "Enable ActiveX and Socket EClients" 
+is enabled and connection port is the same as "Socket Port" on the 
+TWS "Edit->Global Configuration...->API->Settings" menu. Live Trading ports: 
+TWS: 7496; IB Gateway: 4001. Simulated Trading ports for new installations 
+of version 954.1 or newer:  TWS: 7497; IB Gateway: 4002
+2023-04-18 12:47:44,552 - quanttrader.brokerage.ib_brokerage - ERROR - Error. id: -1, Code: 504, Msg: Not connected
+2023-04-18 12:48:10,684 - quanttrader.gui.ui_main_window - INFO - control: start_strategy 1
+2023-04-18 12:48:16,532 - quanttrader.gui.ui_main_window - INFO - control: liquidate all strategy
+2023-04-18 12:48:19,352 - quanttrader.gui.ui_main_window - INFO - closing main window
