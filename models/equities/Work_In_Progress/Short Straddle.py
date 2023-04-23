@@ -52,7 +52,7 @@ class ShortStrangles():
                                               keepUpToDate=True)
 
         # Debugging Data Import
-        # self.df = util.df(self.data)
+        # self.df = quanttrader_testing.df(self.data)
         # print(test_data)
 
         # Local Variables
@@ -82,7 +82,7 @@ class ShortStrangles():
         nest_asyncio.apply()
 
         # Debug Trading Strangles
-        # self.df = util.df(self.data)
+        # self.df = quanttrader_testing.df(self.data)
         # self.trade_straddle(use_vix_position_sizing=False)
 
         # Set callback function for streaming bars

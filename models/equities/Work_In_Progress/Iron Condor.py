@@ -53,7 +53,7 @@ class IronCondors():
                                               keepUpToDate=True)
 
         # Debugging Data Import
-        # self.df = util.df(self.data)
+        # self.df = quanttrader_testing.df(self.data)
         # print(test_data)
 
         # Local Variables
@@ -85,7 +85,7 @@ class IronCondors():
         nest_asyncio.apply()
 
         # Debug Trading Strangles
-        # self.df = util.df(self.data)
+        # self.df = quanttrader_testing.df(self.data)
         # self.trade_ironcondor(use_vix_position_sizing=False)
         # self.trade_ironcondor(short_call_delta=0.05, short_put_delta=-0.05, long_call_delta=0.50, long_put_delta=-0.50,
         #                       order_type='long', order_style='bracket', take_profit_factor=1.00, days=7,

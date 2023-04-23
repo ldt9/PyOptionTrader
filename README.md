@@ -113,6 +113,7 @@ It should look something like this under the Advanced drop down:
 - Implementing this strategy with futures options instead of equity options
 - ~~Use a different broker's API besides Interactive Brokers~~ (After further research, I have decided to stick with Interactive Brokers)
   - ~~The forced restarts can be a hassle if you are trying to trade futures which trade 23/6~~ (This can be avoided as implemented)
+- Utilize Docker Containers to run different aspects of the client with less overhead than an exe file
 - Make this client more modular/abstract so that it can be used for other strategies (simultaneously) by separating the static aspects of the class into helper functions
   - This is in progress by modeling our strategies based off of [quanttrader's](https://github.com/letianzj/quanttrader) design
 - Implement this strategy such that it capitalizes on the IV _difference_ between the Barone-Adesi And Whaley and Black-Scholes models
