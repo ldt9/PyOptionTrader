@@ -91,9 +91,7 @@ class ShortStrangles:
                                                   useRTH=False,
                                                   keepUpToDate=True)
 
-            # Debugging Data Import
-            # self.df = quanttrader_testing.df(self.data)
-            # print(test_data)
+            print("Contract ID:", self.underlying.conId)
 
             # Get current options chains
             self.chains = self.ib.reqSecDefOptParams(self.underlying.symbol, '', self.underlying.secType,

@@ -88,6 +88,9 @@ class StrategyBase(metaclass=ABCMeta):
         self._position_manager.on_fill(fill_event)
         self._order_manager.on_fill(fill_event)
 
+    def request_options_chain(self, sym):
+        return self.strategy_manager.request_options_chain(sym)
+
     def place_order(self, o):
         """
         expect user to set up order type, order size and order price
@@ -116,8 +119,7 @@ class StrategyBase(metaclass=ABCMeta):
         if timestamp is not None:
             o.create_time = timestamp
 
-        self.place_order (o)
-
+        self.place_order(o)
 
     def cancel_order(self, oid):
         if oid in self._order_manager.standing_order_set:

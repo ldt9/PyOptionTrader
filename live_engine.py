@@ -41,7 +41,7 @@ def main(config_file, instrument_meta_file):
         if not os.path.exists(d):
             os.makedirs(d)
 
-    _logger = logging.getLogger('backend')
+    _logger = logging.getLogger('pyoptiontrador')
     _logger.setLevel(logging.DEBUG)
     handler1 = logging.StreamHandler()
     handler2 = logging.FileHandler(f"log/{today}.log")
@@ -51,7 +51,7 @@ def main(config_file, instrument_meta_file):
     _logger.addHandler(handler1)
     _logger.addHandler(handler2)
 
-    _logger2 = logging.getLogger('qtlive')
+    _logger2 = logging.getLogger('backend')
     _logger2.setLevel(logging.DEBUG)
     _logger2.addHandler(handler1)
     _logger2.addHandler(handler2)

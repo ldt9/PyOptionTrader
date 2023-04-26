@@ -65,6 +65,23 @@ strategy:
     total_cancel_limit: 5
     total_loss_limit: 5000
     total_trade_limit: 15
+  #---------- Strategy, params control, and local risk control -----------#
+  ShortStranglesOptionsStrategy:
+    active: false
+    capital: 50000
+    params:
+      tick_trigger_threshold: 50   # how often to update the chain
+      target_dte: 45                # 45 days to expiration
+      target_profit: 0.5            # equvalent to 50% of credit received
+      target_stop_loss: 3.0         # equvalent to 200% of credit received
+      target_delta: 0.16            # equvalent to 16 delta or 1 std dev
+    symbols:
+      - SPY STK SMART
+      - ESM3 FUT CME
+    total_active_limit: 2
+    total_cancel_limit: 5
+    total_loss_limit: 5000
+    total_trade_limit: 15
 #---------- global risk control -----------#
 total_active_limit: 3
 total_cancel_limit: 10

@@ -97,6 +97,9 @@ class StrategyManager(object):
         for k, v in self._strategy_dict.items():
             v.active = False
 
+    def request_options_chain(self, sym):
+        self._broker.request_options_chain(sym)
+
     def place_order(self, o, check_risk=True):
         # currently it puts order directly with broker; e.g. by simplying calling ib.placeOrder method
         # Because order is placed directly; all subsequent on_order messages are order status updates

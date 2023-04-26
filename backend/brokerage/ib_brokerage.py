@@ -301,6 +301,42 @@ class InteractiveBrokers(BrokerageBase):
         """
         self.api.cancelPositions()
 
+    def request_options_chain(self, symbol):
+        """
+        Retrieve options chain data. Options chain data for this symbol will then be streamed to client.
+        (Only works for stocks)
+
+        TODO: Implement for futures options
+
+        :param symbol: the symbol to get options chain data for
+        :return: chain: the options chain data
+        """
+        if not self.api.connected:
+            return
+
+        # Find contract id in the contract symbol dictionary on initialized assets
+        conid = 0
+        for key, value in self.contract_symbol_dict.items():
+            if value == symbol:
+                conid = key
+                break
+        if conid == 0:
+            _logger.error(f'Failed to find contract id to subscribe options chain: {symbol}')
+            return
+
+        # request options chain data
+        try:
+            contract = symbol.split(' ')
+            chain = self.api.reqSecDefOptParams(self.reqid, contract[0], '', contract[1], conid)
+            self.reqid += 1
+
+            _logger.info(f'chain_info from request_options_chain: {chain}')
+
+            return chain
+        except Exception as e:
+            _logger.error(f'Failed to request options chain for {symbol}: {e}')
+            return None
+
     def request_historical_data(self, symbol, end=None):
         """
         Request 1800 S (30 mins) historical bar data from Interactive Brokers.
@@ -384,7 +420,7 @@ class InteractiveBrokers(BrokerageBase):
     @staticmethod
     def symbol_to_contract(symbol):
         """
-        Convert fulll symbol string to IB contract
+        Convert full symbol string to IB contract
 
         TODO
         CL.HO BAG 174230608 1 NYMEX 257430162 1 NYMEX NYMEX     # Inter-comdty
@@ -571,6 +607,8 @@ class IBApi(EWrapper, EClient):
         self.globalCancelOnly = False
         self.simplePlaceOid = None
 
+        self.chain_info = None
+
     # ------------------------------------------ EClient functions --------------------------------------- #
     def keyboardInterrupt(self):
         self.nKeybInt += 1
@@ -582,6 +620,15 @@ class IBApi(EWrapper, EClient):
     def stop(self):
         _logger.info("Executing cancels")
         _logger.info("Executing cancels ... finished")
+
+    def reqSecDefOptParams(self, reqId:int, underlyingSymbol:str,
+                            futFopExchange:str, underlyingSecType:str,
+                            underlyingConId:int):
+        super().reqSecDefOptParams(reqId, underlyingSymbol, futFopExchange, underlyingSecType, underlyingConId)
+
+        _logger.info(f'chain_info from reqSecDefOptParams: {self.chain_info}')
+
+        return self.chain_info
 
     # ------------------------------------------------------------------ End EClient functions -------------------------------------------------------- #
 
@@ -1029,6 +1076,9 @@ class IBApi(EWrapper, EClient):
         msg = f"SecurityDefinitionOptionParameter. ReqId: {reqId}, Exchange: {exchange}, Underlying conId: {underlyingConId}, " \
               f"TradingClass: {tradingClass}, Multiplier: {multiplier}, Expirations: {expirations}, Strikes: {str(strikes)}"
         _logger.info(msg)
+        self.chain_info = msg
+
+        _logger.info(f'chain_info from securityDefinitionOptionParameter: {self.chain_info}')
 
     def securityDefinitionOptionParameterEnd(self, reqId: int):
         super().securityDefinitionOptionParameterEnd(reqId)
