@@ -99,6 +99,9 @@ class StrategyBase(metaclass=ABCMeta):
     def request_options_chain(self, sym):
         return self.strategy_manager.request_options_chain(sym)
 
+    def request_option_contract_data(self, sym):
+        return self.strategy_manager.request_option_contract_data(sym)
+
     def place_order(self, o):
         """
         expect user to set up order type, order size and order price

@@ -338,6 +338,15 @@ class InteractiveBrokers(BrokerageBase):
             _logger.error(f'Failed to request options chain for {symbol}: {e}')
             return None
 
+    def request_option_contract_data(self, symbol):
+        # symbol == "SPY OPT 20230616 405 C SMART"
+        contract = InteractiveBrokers.symbol_to_contract(symbol)
+        self.api.reqMktData(1, contract, '', False, False, [])
+        self.reqid += 1
+        time.sleep(5)  # wait for response
+        data = self.api.get_option_contract_data()
+        return data
+
     def request_historical_data(self, symbol, end=None):
         """
         Request 1800 S (30 mins) historical bar data from Interactive Brokers.
@@ -380,7 +389,6 @@ class InteractiveBrokers(BrokerageBase):
         self.hist_data_request_dict[self.reqid] = symbol
         self.api.reqHistoricalTicks(self.reqid, ib_contract, start_time, "", 1000, reqtype, useRth, True, [])
         self.reqid += 1
-
 
     def reqCurrentTime(self):
         """
@@ -609,6 +617,7 @@ class IBApi(EWrapper, EClient):
         self.simplePlaceOid = None
 
         self.options_chain_data = None
+        self.option_contract_data = None
 
     # ------------------------------------------ EClient functions --------------------------------------- #
     def keyboardInterrupt(self):
@@ -1079,15 +1088,21 @@ class IBApi(EWrapper, EClient):
         super().securityDefinitionOptionParameterEnd(reqId)
         _logger.info(f"SecurityDefinitionOptionParameterEnd. ReqId: {reqId}")
 
-    def tickOptionComputation(self, reqId: TickerId, tickType: TickType,
+    def tickOptionComputation(self, reqId: TickerId, tickType: TickType, tickAttrib: TickAttrib,
                               impliedVol: float, delta: float, optPrice: float, pvDividend: float,
                               gamma: float, vega: float, theta: float, undPrice: float):
-        super().tickOptionComputation(reqId, tickType, impliedVol, delta,
+        super().tickOptionComputation(reqId, tickType, tickAttrib, impliedVol, delta,
                                       optPrice, pvDividend, gamma, vega, theta, undPrice)
         msg = f"TickOptionComputation. TickerId: {reqId}, TickType: {tickType}, ImpliedVolatility: {impliedVol}, " \
               f"Delta: {delta}, OptionPrice: {optPrice}, pvDividend: {pvDividend}, Gamma: {gamma}, " \
               f"Vega: {vega}, Theta: {theta}, UnderlyingPrice: {undPrice}"
-        _logger.info(msg)
+        # _logger.info(msg)
+        self.option_contract_data = {"TickerId": {reqId}, "TickType": {tickType}, "ImpliedVolatility": {impliedVol},
+              "Delta": {delta}, "OptionPrice": {optPrice}, "pvDividend": {pvDividend}, "Gamma": {gamma},
+              "Vega": {vega}, "Theta": {theta}, "UnderlyingPrice": {undPrice}}
+
+    def get_option_contract_data(self):
+        return self.option_contract_data
 
     def tickNews(self, tickerId: int, timeStamp: int, providerCode: str,
                  articleId: str, headline: str, extraData: str):
@@ -1234,7 +1249,7 @@ class IBApi(EWrapper, EClient):
 
     def execDetailsEnd(self, reqId: int):
         super().execDetailsEnd(reqId)
-        _logger(f"ExecDetailsEnd. ReqId: {reqId}")
+        _logger.info(f"ExecDetailsEnd. ReqId: {reqId}")
 
     def displayGroupList(self, reqId: int, groups: str):
         super().displayGroupList(reqId, groups)

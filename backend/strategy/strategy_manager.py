@@ -100,6 +100,9 @@ class StrategyManager(object):
     def request_options_chain(self, sym):
         return self._broker.request_options_chain(sym)
 
+    def request_option_contract_data(self, contract):
+        return self._broker.request_option_contract_data(contract)
+
     def place_order(self, o, check_risk=True):
         # currently it puts order directly with broker; e.g. by simplying calling ib.placeOrder method
         # Because order is placed directly; all subsequent on_order messages are order status updates
