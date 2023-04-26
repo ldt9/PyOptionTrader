@@ -72,6 +72,14 @@ class StrategyBase(metaclass=ABCMeta):
         # for backtest, call super().on_tick() if need to track positions or npv or cash
         self._position_manager.mark_to_market(tick_event.timestamp, tick_event.full_symbol, tick_event.price, self._data_board)
 
+    # def on_bar(self, bar_event):
+    #     """
+    #     Respond to bar
+    #     """
+    #     # for live trading, turn off p&l tick by not calling super.on_bar()
+    #     # for backtest, call super().on_bar() if need to track positions or npv or cash
+    #     self._position_manager.mark_to_market(bar_event.timestamp, bar_event.full_symbol, bar_event.close, self._data_board)
+    #
     def on_order_status(self, order_event):
         """
         on order acknowledged

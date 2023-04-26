@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import time
+
 from .brokerage_base import BrokerageBase
 from ..event.event import LogEvent
 from ..account import AccountEvent
@@ -327,11 +329,10 @@ class InteractiveBrokers(BrokerageBase):
         # request options chain data
         try:
             contract = symbol.split(' ')
-            chain = self.api.reqSecDefOptParams(self.reqid, contract[0], '', contract[1], conid)
+            self.api.reqSecDefOptParams(self.reqid, contract[0], '', contract[1], conid)
+            time.sleep(1)  # wait for response
+            chain = self.api.get_options_chain_data()
             self.reqid += 1
-
-            _logger.info(f'chain_info from request_options_chain: {chain}')
-
             return chain
         except Exception as e:
             _logger.error(f'Failed to request options chain for {symbol}: {e}')
@@ -607,7 +608,7 @@ class IBApi(EWrapper, EClient):
         self.globalCancelOnly = False
         self.simplePlaceOid = None
 
-        self.chain_info = None
+        self.options_chain_data = None
 
     # ------------------------------------------ EClient functions --------------------------------------- #
     def keyboardInterrupt(self):
@@ -620,15 +621,6 @@ class IBApi(EWrapper, EClient):
     def stop(self):
         _logger.info("Executing cancels")
         _logger.info("Executing cancels ... finished")
-
-    def reqSecDefOptParams(self, reqId:int, underlyingSymbol:str,
-                            futFopExchange:str, underlyingSecType:str,
-                            underlyingConId:int):
-        super().reqSecDefOptParams(reqId, underlyingSymbol, futFopExchange, underlyingSecType, underlyingConId)
-
-        _logger.info(f'chain_info from reqSecDefOptParams: {self.chain_info}')
-
-        return self.chain_info
 
     # ------------------------------------------------------------------ End EClient functions -------------------------------------------------------- #
 
@@ -1075,15 +1067,17 @@ class IBApi(EWrapper, EClient):
                                                   strikes)
         msg = f"SecurityDefinitionOptionParameter. ReqId: {reqId}, Exchange: {exchange}, Underlying conId: {underlyingConId}, " \
               f"TradingClass: {tradingClass}, Multiplier: {multiplier}, Expirations: {expirations}, Strikes: {str(strikes)}"
-        _logger.info(msg)
-        self.chain_info = msg
+        # _logger.info(msg)
+        self.options_chain_data = {"reqId": reqId, "exchange": exchange, "underlyingConId": underlyingConId,
+                                   "tradingClass": tradingClass, "multiplier": multiplier, "expirations": expirations,
+                                   "strikes": strikes}
 
-        _logger.info(f'chain_info from securityDefinitionOptionParameter: {self.chain_info}')
+    def get_options_chain_data(self):
+        return self.options_chain_data
 
     def securityDefinitionOptionParameterEnd(self, reqId: int):
         super().securityDefinitionOptionParameterEnd(reqId)
-        _logger.info("SecurityDefinitionOptionParameterEnd. ReqId: {reqId}")
-
+        _logger.info(f"SecurityDefinitionOptionParameterEnd. ReqId: {reqId}")
 
     def tickOptionComputation(self, reqId: TickerId, tickType: TickType,
                               impliedVol: float, delta: float, optPrice: float, pvDividend: float,
