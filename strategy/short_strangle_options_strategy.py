@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from backend.strategy.strategy_base import StrategyBase
-from backend.order.order_event import OrderEvent
-from backend.order.order_type import OrderType
-from backend.data.tick_event import TickType
-from backend.data.options_util import *
+from backend_ib_api.strategy.strategy_base import StrategyBase
+from backend_ib_api.order.order_event import OrderEvent
+from backend_ib_api.order.order_type import OrderType
+from backend_ib_api.data.tick_event import TickType
+from backend_ib_api.data.options_util import *
 import logging
 import datetime
 
-_logger = logging.getLogger('backend')
+_logger = logging.getLogger('backend_ib_api')
 
 
 class ShortStranglesOptionsStrategy(StrategyBase):

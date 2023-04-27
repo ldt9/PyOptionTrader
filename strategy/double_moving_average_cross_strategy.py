@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from backend.strategy.strategy_base import StrategyBase
-from backend.data.tick_event import TickType
-from backend.order.order_event import OrderEvent
-from backend.order.order_status import OrderStatus
-from backend.order.order_type import OrderType
+from backend_ib_api.strategy.strategy_base import StrategyBase
+from backend_ib_api.data.tick_event import TickType
+from backend_ib_api.order.order_event import OrderEvent
+from backend_ib_api.order.order_status import OrderStatus
+from backend_ib_api.order.order_type import OrderType
 from datetime import datetime
 import numpy as np
 import pandas as pd

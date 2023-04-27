@@ -13,9 +13,9 @@ import pandas as pd
 import numpy as np
 from signal import signal, SIGINT, SIG_DFL
 import pickle
-from backend.event.event import EventType
-from backend.event.live_event_engine import LiveEventEngine
-from backend.brokerage.ib_brokerage import InteractiveBrokers
+from backend_ib_api.event.event import EventType
+from backend_ib_api.event.live_event_engine import LiveEventEngine
+from backend_ib_api.brokerage.ib_brokerage import InteractiveBrokers
 
 signal(SIGINT, SIG_DFL)
 df = pd.DataFrame(columns=['Open', 'High', 'Low', 'Close', 'Volume'])

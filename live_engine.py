@@ -5,8 +5,8 @@ import importlib
 from datetime import datetime
 import yaml
 from PyQt5 import QtCore, QtWidgets, QtGui
-import backend
-from backend.gui.ui_main_window import MainWindow
+import backend_ib_api
+from backend_ib_api.gui.ui_main_window import MainWindow
 import atexit
 from signal import signal, SIGINT, SIG_DFL
 from os import kill
@@ -51,7 +51,7 @@ def main(config_file, instrument_meta_file):
     _logger.addHandler(handler1)
     _logger.addHandler(handler2)
 
-    _logger2 = logging.getLogger('backend')
+    _logger2 = logging.getLogger('backend_ib_api')
     _logger2.setLevel(logging.DEBUG)
     _logger2.addHandler(handler1)
     _logger2.addHandler(handler2)
