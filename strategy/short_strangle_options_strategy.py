@@ -48,14 +48,14 @@ class ShortStranglesOptionsStrategy(StrategyBase):
             _logger.info(f'ShortStranglesOptionsStrategy nearest expiration: {str(self.nearest_exp)}, nearest dte: {str(self.nearest_dte)}')
 
             # get the ATM option contract string
-            contract_str = OptionsUtil.make_contract_str(k.full_symbol, 'OPT', self.nearest_exp.strftime('%Y%m%d'), str(round(k.price)), 'C', 'SMART')
-            _logger.info(f'ShortStranglesOptionsStrategy ATM contract string: {contract_str}')
+            atm_contract_str = OptionsUtil.make_contract_str(k.full_symbol, 'OPT', self.nearest_exp.strftime('%Y%m%d'), str(round(k.price)), 'C', 'SMART')
+            _logger.info(f'ShortStranglesOptionsStrategy ATM contract string: {atm_contract_str}')
 
             # get the necessary option contract data
-            data = self.request_option_contract_data(contract_str)
+            atm_data = self.request_option_contract_data(atm_contract_str)
 
             # get the implied volatility for the ATM option
-            self.iv = OptionsUtil.get_chain_iv("py_vollib", data, k.price, self.nearest_dte, 'C')
+            self.iv = OptionsUtil.get_chain_iv("py_vollib", atm_data, k.price, self.nearest_dte, 'C')
             _logger.info(f'ShortStranglesOptionsStrategy implied volatility: {str(self.iv)}')
 
             # get the strike price for the options with the given delta
@@ -63,3 +63,13 @@ class ShortStranglesOptionsStrategy(StrategyBase):
             _logger.info(f'OrderPerIntervalStrategy call strike: {str(int(call_strike))}')
             put_strike = OptionsUtil.get_strike(k.price, self.target_delta, self.nearest_dte, self.iv, 'P', 'down', rounding=5.0)
             _logger.info(f'OrderPerIntervalStrategy put strike: {str(int(put_strike))}')
+
+            # get the option contract strings
+            call_contract_str = OptionsUtil.make_contract_str(k.full_symbol, 'OPT', self.nearest_exp.strftime('%Y%m%d'), str(int(call_strike)), 'C', 'SMART')
+            put_contract_str = OptionsUtil.make_contract_str(k.full_symbol, 'OPT', self.nearest_exp.strftime('%Y%m%d'), str(int(put_strike)), 'P', 'SMART')
+
+            # TODO: grab the contract details for the call and put options from the broker class, pass through the base and manager classes
+            # TODO: make an order event in the form of a bag using the conID's from the contract details and pass it to place_order(o)
+            # TODO: add a on_fill method to handle the in_trade boolean, stops, and take profits
+            # TODO: add a managment method for managing the trade at 21 DTE
+

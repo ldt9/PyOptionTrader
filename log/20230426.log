@@ -21448,3 +21448,200 @@ Option Greeks:
 2023-04-26 15:48:36,880 - backend.gui.ui_main_window - INFO - control: stop_strategy 3
 2023-04-26 15:49:09,729 - backend.gui.ui_main_window - INFO - closing main window
 2023-04-26 15:49:09,730 - backend.brokerage.ib_brokerage - INFO - connected False
+2023-04-26 20:59:29,247 - backend - INFO - ShortStranglesOptionsStrategy initiated
+2023-04-26 20:59:29,315 - backend.strategy.strategy_manager - INFO - add ESM1 FUT GLOBEX
+2023-04-26 20:59:29,315 - backend.strategy.strategy_manager - INFO - add ESM3 FUT CME
+2023-04-26 20:59:29,316 - backend.strategy.strategy_manager - INFO - add SPY STK SMART
+2023-04-26 20:59:32,816 - backend.brokerage.ib_brokerage - ERROR - Error. id: -1, Code: 502, Msg: Couldn't connect to TWS. Confirm that "Enable ActiveX and Socket EClients" 
+is enabled and connection port is the same as "Socket Port" on the 
+TWS "Edit->Global Configuration...->API->Settings" menu. Live Trading ports: 
+TWS: 7496; IB Gateway: 4001. Simulated Trading ports for new installations 
+of version 954.1 or newer:  TWS: 7497; IB Gateway: 4002
+2023-04-26 20:59:32,817 - backend.brokerage.ib_brokerage - ERROR - Error. id: -1, Code: 504, Msg: Not connected
+2023-04-26 20:59:36,368 - backend.gui.ui_main_window - INFO - closing main window
+2023-04-26 21:00:42,971 - backend - INFO - ShortStranglesOptionsStrategy initiated
+2023-04-26 21:00:42,998 - backend.strategy.strategy_manager - INFO - add ESM1 FUT GLOBEX
+2023-04-26 21:00:42,999 - backend.strategy.strategy_manager - INFO - add ESM3 FUT CME
+2023-04-26 21:00:43,000 - backend.strategy.strategy_manager - INFO - add SPY STK SMART
+2023-04-26 21:00:43,391 - backend.brokerage.ib_brokerage - INFO - IB connected
+2023-04-26 21:00:43,395 - backend.brokerage.ib_brokerage - INFO - CurrentTime: 21:00:42.000000
+2023-04-26 21:00:43,398 - backend.brokerage.ib_brokerage - INFO - Account list:, DU6339390
+2023-04-26 21:00:43,399 - backend.brokerage.ib_brokerage - INFO - nextValidOrderId: 2489
+2023-04-26 21:00:43,400 - backend.brokerage.ib_brokerage - INFO - Requesting market data 0 ESM1 FUT GLOBEX
+2023-04-26 21:00:43,403 - backend.brokerage.ib_brokerage - INFO - Requesting market data 2 ESM3 FUT CME
+2023-04-26 21:00:43,404 - backend.brokerage.ib_brokerage - INFO - Requesting market data 4 SPY STK SMART
+2023-04-26 21:00:43,405 - backend.brokerage.ib_brokerage - ERROR - Error. id: -1, Code: 2104, Msg: Market data farm connection is OK:usfarm.nj
+2023-04-26 21:00:43,405 - backend.brokerage.ib_brokerage - ERROR - Error. id: -1, Code: 2104, Msg: Market data farm connection is OK:usfuture
+2023-04-26 21:00:43,406 - backend.brokerage.ib_brokerage - ERROR - Error. id: -1, Code: 2104, Msg: Market data farm connection is OK:cashfarm
+2023-04-26 21:00:43,406 - backend.brokerage.ib_brokerage - ERROR - Error. id: -1, Code: 2104, Msg: Market data farm connection is OK:usfarm
+2023-04-26 21:00:43,407 - backend.brokerage.ib_brokerage - ERROR - Error. id: -1, Code: 2106, Msg: HMDS data farm connection is OK:ushmds
+2023-04-26 21:00:43,408 - backend.brokerage.ib_brokerage - ERROR - Error. id: -1, Code: 2158, Msg: Sec-def data farm connection is OK:secdefil
+2023-04-26 21:00:43,507 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: AccountCode, Value: DU6339390,  Currency: , AccountName: DU6339390
+2023-04-26 21:00:43,509 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: AccountOrGroup, Value: DU6339390,  Currency: BASE, AccountName: DU6339390
+2023-04-26 21:00:43,509 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: AccountOrGroup, Value: DU6339390,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,509 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: AccountReady, Value: true,  Currency: , AccountName: DU6339390
+2023-04-26 21:00:43,510 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: AccountType, Value: INDIVIDUAL,  Currency: , AccountName: DU6339390
+2023-04-26 21:00:43,510 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: AccruedCash, Value: 2862.01,  Currency: BASE, AccountName: DU6339390
+2023-04-26 21:00:43,511 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: AccruedCash, Value: 2862.01,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,511 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: AccruedCash-C, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,512 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: AccruedCash-S, Value: 2862.01,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,512 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: AccruedDividend, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,512 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: AccruedDividend-C, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,513 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: AccruedDividend-S, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,513 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: AvailableFunds, Value: 1012289.02,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,513 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: AvailableFunds-C, Value: 58332.13,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,514 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: AvailableFunds-S, Value: 953956.89,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,514 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: Billable, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,514 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: Billable-C, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,515 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: Billable-S, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,515 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: BuyingPower, Value: 3815827.56,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,516 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: CashBalance, Value: 1012289.02,  Currency: BASE, AccountName: DU6339390
+2023-04-26 21:00:43,516 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: CashBalance, Value: 1012289.02,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,517 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: ColumnPrio-C, Value: 2,  Currency: , AccountName: DU6339390
+2023-04-26 21:00:43,518 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: ColumnPrio-S, Value: 1,  Currency: , AccountName: DU6339390
+2023-04-26 21:00:43,522 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: CorporateBondValue, Value: 0.00,  Currency: BASE, AccountName: DU6339390
+2023-04-26 21:00:43,523 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: CorporateBondValue, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,523 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: Currency, Value: BASE,  Currency: BASE, AccountName: DU6339390
+2023-04-26 21:00:43,524 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: Currency, Value: USD,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,524 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: Cushion, Value: 1,  Currency: , AccountName: DU6339390
+2023-04-26 21:00:43,525 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: DayTradesRemaining, Value: -1,  Currency: , AccountName: DU6339390
+2023-04-26 21:00:43,525 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: DayTradesRemainingT+1, Value: -1,  Currency: , AccountName: DU6339390
+2023-04-26 21:00:43,526 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: DayTradesRemainingT+2, Value: -1,  Currency: , AccountName: DU6339390
+2023-04-26 21:00:43,526 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: DayTradesRemainingT+3, Value: -1,  Currency: , AccountName: DU6339390
+2023-04-26 21:00:43,527 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: DayTradesRemainingT+4, Value: -1,  Currency: , AccountName: DU6339390
+2023-04-26 21:00:43,527 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: EquityWithLoanValue, Value: 1012289.02,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,527 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: EquityWithLoanValue-C, Value: 58332.13,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,528 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: EquityWithLoanValue-S, Value: 953956.89,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,528 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: ExcessLiquidity, Value: 1012289.02,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,529 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: ExcessLiquidity-C, Value: 58332.13,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,529 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: ExcessLiquidity-S, Value: 953956.89,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,529 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: ExchangeRate, Value: 1.00,  Currency: BASE, AccountName: DU6339390
+2023-04-26 21:00:43,530 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: ExchangeRate, Value: 1.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,530 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: FullAvailableFunds, Value: 1012289.02,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,530 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: FullAvailableFunds-C, Value: 58332.13,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,531 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: FullAvailableFunds-S, Value: 953956.89,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,535 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: FullExcessLiquidity, Value: 1012289.02,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,535 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: FullExcessLiquidity-C, Value: 58332.13,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,535 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: FullExcessLiquidity-S, Value: 953956.89,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,536 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: FullInitMarginReq, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,536 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: FullInitMarginReq-C, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,536 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: FullInitMarginReq-S, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,537 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: FullMaintMarginReq, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,537 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: FullMaintMarginReq-C, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,537 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: FullMaintMarginReq-S, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,537 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: FundValue, Value: 0.00,  Currency: BASE, AccountName: DU6339390
+2023-04-26 21:00:43,538 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: FundValue, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,538 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: FutureOptionValue, Value: 0.00,  Currency: BASE, AccountName: DU6339390
+2023-04-26 21:00:43,538 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: FutureOptionValue, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,539 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: FuturesPNL, Value: 0.00,  Currency: BASE, AccountName: DU6339390
+2023-04-26 21:00:43,539 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: FuturesPNL, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,539 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: FxCashBalance, Value: 0.00,  Currency: BASE, AccountName: DU6339390
+2023-04-26 21:00:43,540 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: FxCashBalance, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,540 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: GrossPositionValue, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,540 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: GrossPositionValue-S, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,541 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: Guarantee, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,541 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: Guarantee-C, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,541 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: Guarantee-S, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,542 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: IndianStockHaircut, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,542 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: IndianStockHaircut-C, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,542 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: IndianStockHaircut-S, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,543 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: InitMarginReq, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,547 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: InitMarginReq-C, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,548 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: InitMarginReq-S, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,548 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: IssuerOptionValue, Value: 0.00,  Currency: BASE, AccountName: DU6339390
+2023-04-26 21:00:43,548 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: IssuerOptionValue, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,549 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: Leverage-S, Value: 0.00,  Currency: , AccountName: DU6339390
+2023-04-26 21:00:43,549 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: LookAheadAvailableFunds, Value: 1012289.02,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,549 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: LookAheadAvailableFunds-C, Value: 58332.13,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,549 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: LookAheadAvailableFunds-S, Value: 953956.89,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,550 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: LookAheadExcessLiquidity, Value: 1012289.02,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,550 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: LookAheadExcessLiquidity-C, Value: 58332.13,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,550 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: LookAheadExcessLiquidity-S, Value: 953956.89,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,551 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: LookAheadInitMarginReq, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,551 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: LookAheadInitMarginReq-C, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,551 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: LookAheadInitMarginReq-S, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,552 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: LookAheadMaintMarginReq, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,552 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: LookAheadMaintMarginReq-C, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,552 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: LookAheadMaintMarginReq-S, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,552 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: LookAheadNextChange, Value: 0,  Currency: , AccountName: DU6339390
+2023-04-26 21:00:43,553 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: MaintMarginReq, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,553 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: MaintMarginReq-C, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,553 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: MaintMarginReq-S, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,554 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: MoneyMarketFundValue, Value: 0.00,  Currency: BASE, AccountName: DU6339390
+2023-04-26 21:00:43,554 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: MoneyMarketFundValue, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,554 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: MutualFundValue, Value: 0.00,  Currency: BASE, AccountName: DU6339390
+2023-04-26 21:00:43,555 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: MutualFundValue, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,555 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: NLVAndMarginInReview, Value: false,  Currency: , AccountName: DU6339390
+2023-04-26 21:00:43,556 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: NetDividend, Value: 0.00,  Currency: BASE, AccountName: DU6339390
+2023-04-26 21:00:43,560 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: NetDividend, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,561 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: NetLiquidation, Value: 1015151.03,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,561 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: NetLiquidation-C, Value: 58332.13,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,561 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: NetLiquidation-S, Value: 956818.90,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,562 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: NetLiquidationByCurrency, Value: 1015151.03,  Currency: BASE, AccountName: DU6339390
+2023-04-26 21:00:43,562 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: NetLiquidationByCurrency, Value: 1015151.03,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,562 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: NetLiquidationUncertainty, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,562 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: OptionMarketValue, Value: 0.00,  Currency: BASE, AccountName: DU6339390
+2023-04-26 21:00:43,563 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: OptionMarketValue, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,563 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: PASharesValue, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,563 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: PASharesValue-C, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,564 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: PASharesValue-S, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,564 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: PhysicalCertificateValue, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,564 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: PhysicalCertificateValue-C, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,565 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: PhysicalCertificateValue-S, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,566 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: PostExpirationExcess, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,566 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: PostExpirationExcess-C, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,566 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: PostExpirationExcess-S, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,567 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: PostExpirationMargin, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,567 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: PostExpirationMargin-C, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,567 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: PostExpirationMargin-S, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,567 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: PreviousDayEquityWithLoanValue, Value: 953956.89,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,568 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: PreviousDayEquityWithLoanValue-S, Value: 953956.89,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,568 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: RealCurrency, Value: BASE,  Currency: BASE, AccountName: DU6339390
+2023-04-26 21:00:43,568 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: RealCurrency, Value: USD,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,573 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: RealizedPnL, Value: 0.00,  Currency: BASE, AccountName: DU6339390
+2023-04-26 21:00:43,574 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: RealizedPnL, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,574 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: RegTEquity, Value: 956818.90,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,574 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: RegTEquity-S, Value: 956818.90,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,575 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: RegTMargin, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,576 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: RegTMargin-S, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,576 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: SMA, Value: 956818.90,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,576 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: SMA-S, Value: 956818.90,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,577 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: SegmentTitle-C, Value: US Commodities,  Currency: , AccountName: DU6339390
+2023-04-26 21:00:43,577 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: SegmentTitle-S, Value: US Securities,  Currency: , AccountName: DU6339390
+2023-04-26 21:00:43,578 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: StockMarketValue, Value: 0.00,  Currency: BASE, AccountName: DU6339390
+2023-04-26 21:00:43,578 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: StockMarketValue, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,578 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: TBillValue, Value: 0.00,  Currency: BASE, AccountName: DU6339390
+2023-04-26 21:00:43,579 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: TBillValue, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,579 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: TBondValue, Value: 0.00,  Currency: BASE, AccountName: DU6339390
+2023-04-26 21:00:43,579 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: TBondValue, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,580 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: TotalCashBalance, Value: 1012289.02,  Currency: BASE, AccountName: DU6339390
+2023-04-26 21:00:43,580 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: TotalCashBalance, Value: 1012289.02,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,580 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: TotalCashValue, Value: 1012289.02,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,581 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: TotalCashValue-C, Value: 58332.13,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,581 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: TotalCashValue-S, Value: 953956.89,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,582 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: TotalDebitCardPendingCharges, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,588 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: TotalDebitCardPendingCharges-C, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,588 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: TotalDebitCardPendingCharges-S, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,588 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: TradingType-S, Value: STKNOPT,  Currency: , AccountName: DU6339390
+2023-04-26 21:00:43,588 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: UnrealizedPnL, Value: 0.00,  Currency: BASE, AccountName: DU6339390
+2023-04-26 21:00:43,588 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: UnrealizedPnL, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,589 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: WarrantValue, Value: 0.00,  Currency: BASE, AccountName: DU6339390
+2023-04-26 21:00:43,589 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: WarrantValue, Value: 0.00,  Currency: USD, AccountName: DU6339390
+2023-04-26 21:00:43,589 - backend.gui.ui_account_window - INFO - account id recorded: DU6339390
+2023-04-26 21:00:43,589 - backend.brokerage.ib_brokerage - INFO - UpdateAccountValue. Key: WhatIfPMEnabled, Value: true,  Currency: , AccountName: DU6339390
+2023-04-26 21:00:43,590 - backend.brokerage.ib_brokerage - INFO - UpdateAccountTime. Time: 15:17
+2023-04-26 21:00:43,590 - backend.brokerage.ib_brokerage - INFO - AccountDownloadEnd. Account: DU6339390
+2023-04-26 21:00:43,640 - backend.brokerage.ib_brokerage - ERROR - Error. id: 0, Code: 200, Msg: No security definition has been found for the request
+2023-04-26 21:00:43,712 - backend.brokerage.ib_brokerage - ERROR - Error. id: 1, Code: 200, Msg: No security definition has been found for the request
+2023-04-26 21:00:43,818 - backend.brokerage.ib_brokerage - INFO - Contract Detail: ES, ESM3, , CME, 50
+2023-04-26 21:00:43,818 - backend.brokerage.ib_brokerage - INFO - ContractDetailsEnd. ReqId: 2
+2023-04-26 21:00:43,930 - backend.brokerage.ib_brokerage - INFO - MarketDataType. ReqId: 3, Type: 1
+2023-04-26 21:00:43,932 - backend.brokerage.ib_brokerage - INFO - TickReqParams. TickerId: 3, MinTick: 0.25, BboExchange: 50006, SnapshotPermissions: 3
+2023-04-26 21:00:44,027 - backend.brokerage.ib_brokerage - INFO - Contract Detail: SPY, SPY, ARCA, SMART, 
+2023-04-26 21:00:44,027 - backend.brokerage.ib_brokerage - INFO - ContractDetailsEnd. ReqId: 4
+2023-04-26 21:00:44,123 - backend.brokerage.ib_brokerage - INFO - MarketDataType. ReqId: 5, Type: 1
+2023-04-26 21:00:44,123 - backend.brokerage.ib_brokerage - INFO - TickReqParams. TickerId: 5, MinTick: 0.01, BboExchange: a60001, SnapshotPermissions: 3
+2023-04-26 21:00:47,109 - backend.gui.ui_main_window - INFO - control: start_strategy 3
+2023-04-26 21:01:17,602 - backend.gui.ui_main_window - INFO - control: stop_strategy 3
+2023-04-26 21:01:22,335 - backend.gui.ui_main_window - INFO - closing main window
+2023-04-26 21:01:22,336 - backend.brokerage.ib_brokerage - INFO - connected False
