@@ -798,6 +798,9 @@ class IBApi(EWrapper, EClient):
             self.broker.account_summary.open_pnl = float(val)
             self.broker.event_engine.put(self.broker.account_summary)   # assume alphabatic order
 
+    def request_net_liq_value(self):
+        return self.broker.account_summary.balance
+
     def updatePortfolio(self, contract: Contract, position: float,
                         marketPrice: float, marketValue: float,
                         averageCost: float, unrealizedPNL: float,
