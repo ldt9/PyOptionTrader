@@ -33,6 +33,9 @@ class StrategyManager(object):
         self._tick_strategy_dict = {}  # sym -> list of strategy
         self._sid_oid_dict = {0: [], -1: []}    # sid ==> oid list; 0: manual; -1: unknown source
 
+    def request_net_liq_value(self):
+        return self._broker.request_net_liq_value()
+
     def load_strategy(self, strat_dict):
         sid = 1   # 0 is mannual discretionary trade, or not found
         # similar to backtest; strategy sets capital, params, and symbols

@@ -6,7 +6,7 @@ from backend_ib_api.order.order_type import OrderType
 from backend_ib_api.data.tick_event import TickType
 import logging
 
-_logger = logging.getLogger('qtlive')
+_logger = logging.getLogger('backend_ib_api')
 
 
 class OrderPerIntervalStrategy(StrategyBase):

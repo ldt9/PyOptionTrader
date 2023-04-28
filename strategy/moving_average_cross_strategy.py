@@ -8,7 +8,7 @@ from backend_ib_api.order.order_type import OrderType
 import numpy as np
 import logging
 
-_logger = logging.getLogger('qtlive')
+_logger = logging.getLogger('backend_ib_api')
 
 
 class MovingAverageCrossStrategy(StrategyBase):

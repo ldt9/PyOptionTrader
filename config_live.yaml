@@ -54,8 +54,8 @@ strategy:
   OrderPerIntervalStrategy:
     active: false
     capital: 50000
-    order_start_time: '10:00:00'
-    order_end_time: '16:15:00'
+#    order_start_time: '10:00:00'
+#    order_end_time: '16:15:00'
     params:
       tick_trigger_threshold: 100
     single_trade_limit: 3

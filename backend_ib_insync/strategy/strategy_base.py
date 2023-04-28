@@ -102,6 +102,9 @@ class StrategyBase(metaclass=ABCMeta):
     def request_option_contract_data(self, sym):
         return self.strategy_manager.request_option_contract_data(sym)
 
+    def request_net_liq_value(self):
+        return self.strategy_manager.request_net_liq_value()
+
     def place_order(self, o):
         """
         expect user to set up order type, order size and order price
