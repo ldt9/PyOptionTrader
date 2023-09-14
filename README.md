@@ -1,4 +1,4 @@
-# PyOptionTrador: Option Trading Strategies for Interactive Brokers
+# PyOptionTrader: Option Trading Strategies for Interactive Brokers
 
 ## Introduction
 I have been interested in stock trading and finance since I came to college. This interest has led to my passion to study the idea of value in the markets. I would like to automate an existing strategy that I currently do manually that has generated consistent profit for me almost 80% of the time. Below is an explanation of the strategy and the results of my backtesting.
